@@ -5270,7 +5270,7 @@
         }
     </style>
     <!-- ==========================================
-         📞 CONTACT SECTION - THE HOTLINE
+         📞 CONTACT SECTION - THE HOTLINE (CLEAN VERSION)
     ========================================== -->
     <section class="contact-section" id="contact">
         <div class="container">
@@ -5291,7 +5291,7 @@
             </div>
 
             <div class="contact-wrapper">
-                <!-- Left Side: Contact Info -->
+                <!-- Center: Contact Info Only -->
                 <div class="contact-info animate-on-scroll">
                     <div class="contact-card">
                         <h3>Slide Into My DMs 📱</h3>
@@ -5336,64 +5336,9 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Social Links Row -->
-                        <div class="contact-socials">
-                            <a href="#" class="cs-link" data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="cs-link" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" class="cs-link" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="cs-link" data-tooltip="Discord"><i class="fab fa-discord"></i></a>
-                        </div>
+                        
+                        <!-- NO EXTRA BUTTONS HERE NOW -->
                     </div>
-                </div>
-
-                <!-- Right Side: Contact Form -->
-                <div class="contact-form-container animate-on-scroll">
-                    <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
-                        <div class="form-header">
-                            <h4>Send a Message</h4>
-                            <span>(No spam, pls!)</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" placeholder="John Doe" required>
-                            <span class="focus-border"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" placeholder="john@example.com" required>
-                            <span class="focus-border"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="budget">Budget (Optional)</label>
-                            <select id="budget">
-                                <option value="none">Select Range</option>
-                                <option value="small">₹500 - ₹15k (Small Project)</option>
-                                <option value="medium">₹15k - ₹50k (Medium Project)</option>
-                                <option value="large">₹50k+ (Big Stuff! 🤑)</option>
-                                <option value="coffee">Just buying you a coffee ☕</option>
-                            </select>
-                            <span class="focus-border"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="Tell me about your project... or send a joke!" required></textarea>
-                            <span class="focus-border"></span>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary submit-btn">
-                            <span class="btn-text">Send Message 🚀</span>
-                            <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
-                        </button>
-
-                        <p class="form-footer">
-                            By clicking send, you agree that you are awesome! 😎
-                        </p>
-                    </form>
                 </div>
             </div>
         </div>
@@ -5408,29 +5353,35 @@
         }
 
         .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: start;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
         }
 
-        @media (max-width: 992px) {
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
+        .contact-info {
+            width: 100%;
+            max-width: 800px;
         }
 
-        /* Contact Info Card */
         .contact-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 30px;
-            padding: 40px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--blue);
+            transform: translateY(-5px);
         }
 
         .contact-card h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             margin-bottom: 15px;
             background: var(--gradient-1);
             -webkit-background-clip: text;
@@ -5439,14 +5390,19 @@
 
         .contact-card p {
             color: #aaa;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             line-height: 1.6;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-methods {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            text-align: left;
         }
 
         .contact-item {
@@ -5454,7 +5410,7 @@
             align-items: center;
             gap: 20px;
             background: rgba(255,255,255,0.03);
-            padding: 20px;
+            padding: 25px;
             border-radius: 20px;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -5466,18 +5422,20 @@
         .contact-item:not(.no-hover):hover {
             background: rgba(255,255,255,0.08);
             border-color: var(--blue);
-            transform: translateX(10px);
+            transform: translateY(-5px);
+            box-shadow: var(--glow-blue);
         }
 
         .contact-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: white;
+            flex-shrink: 0;
         }
 
         .contact-icon.instagram { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -5485,7 +5443,7 @@
         .contact-icon.time { background: var(--gradient-3); }
 
         .contact-details h4 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #888;
             margin-bottom: 5px;
         }
@@ -5493,137 +5451,35 @@
         .contact-details span {
             display: block;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: white;
             margin-bottom: 5px;
+            word-break: break-all;
         }
 
         .contact-details small {
             color: var(--green);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 
         .arrow-icon {
             margin-left: auto;
             color: #666;
+            font-size: 1.2rem;
             transition: transform 0.3s ease;
         }
 
         .contact-item:hover .arrow-icon {
-            transform: translateX(5px);
+            transform: translateX(5px) scale(1.2);
             color: var(--blue);
         }
 
-        /* Socials Row */
-        .contact-socials {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid var(--card-border);
-        }
-
-        .cs-link {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s var(--bounce);
-            position: relative;
-        }
-
-        .cs-link:hover {
-            transform: translateY(-5px);
-            background: var(--blue);
-            border-color: var(--blue);
-        }
-
-        /* Contact Form */
-        .contact-form {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 30px;
-            padding: 40px;
-        }
-
-        .form-header {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .form-header h4 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        .form-header span {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            background: rgba(0,0,0,0.2);
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
-            color: white;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--blue);
-            background: rgba(0,212,255,0.05);
-        }
-
-        .form-group select option {
-            background: var(--darker);
-            color: white;
-        }
-
-        .submit-btn {
-            width: 100%;
-            position: relative;
-        }
-
-        .btn-loading {
-            display: none;
-        }
-
-        .submit-btn.loading .btn-text { display: none; }
-        .submit-btn.loading .btn-loading { display: inline-block; }
-
-        .form-footer {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 20px;
+        @media (max-width: 768px) {
+            .contact-card { padding: 30px 20px; }
+            .contact-methods { grid-template-columns: 1fr; }
+            .contact-item { padding: 20px; }
+            .contact-icon { width: 50px; height: 50px; font-size: 1.5rem; }
+            .contact-details span { font-size: 1rem; }
         }
     </style>
 
@@ -5631,7 +5487,6 @@
          📋 FOOTER - THE EPIC ENDING
     ========================================== -->
     <footer class="footer">
-        <!-- Floating Footer Content -->
         <div class="container">
             <div class="footer-content">
                 <!-- Brand Column -->
@@ -5641,9 +5496,6 @@
                         Converting caffeine into code since 2020. 
                         Let's build something legendary together! 🚀
                     </p>
-                    <div class="footer-socials">
-                        <!-- Same social links as hero -->
-                    </div>
                 </div>
 
                 <!-- Quick Links -->
@@ -5741,207 +5593,75 @@
             display: block;
         }
 
-        .footer-logo .dot {
-            color: var(--blue);
-        }
-
-        .footer-desc {
-            color: #aaa;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            max-width: 300px;
-        }
-
-        .footer-col h4 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-            color: white;
-            margin-bottom: 25px;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col ul li a {
-            color: #888;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--blue);
-            padding-left: 5px;
-        }
+        .footer-logo .dot { color: var(--blue); }
+        .footer-desc { color: #aaa; line-height: 1.6; margin-bottom: 25px; max-width: 300px; }
+        .footer-col h4 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: white; margin-bottom: 25px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: #888; text-decoration: none; transition: all 0.3s ease; }
+        .footer-col ul li a:hover { color: var(--blue); padding-left: 5px; }
 
         /* Newsletter */
         .newsletter-form {
-            display: flex;
-            background: rgba(255,255,255,0.05);
-            padding: 5px;
-            border-radius: 50px;
-            border: 1px solid var(--card-border);
+            display: flex; background: rgba(255,255,255,0.05); padding: 5px;
+            border-radius: 50px; border: 1px solid var(--card-border);
         }
-
-        .newsletter-form input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            padding: 10px 15px;
-            color: white;
-            outline: none;
-        }
-
-        .newsletter-form button {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-1);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .newsletter-form button:hover {
-            transform: scale(1.1);
-        }
+        .newsletter-form input { flex: 1; background: transparent; border: none; padding: 10px 15px; color: white; outline: none; }
+        .newsletter-form button { width: 40px; height: 40px; background: var(--gradient-1); border: none; border-radius: 50%; color: white; cursor: pointer; transition: transform 0.3s ease; }
+        .newsletter-form button:hover { transform: scale(1.1); }
 
         /* Footer Bottom */
         .footer-bottom {
-            border-top: 1px solid var(--card-border);
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            border-top: 1px solid var(--card-border); padding-top: 30px;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 20px;
         }
-
-        .copyright {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .copyright span {
-            color: white;
-            font-weight: 700;
-        }
-
-        .bug-count {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            display: inline-block;
-        }
-
-        .bug-count:hover {
-            transform: scale(1.5) rotate(20deg);
-        }
-
+        .copyright { color: #666; font-size: 0.9rem; }
+        .copyright span { color: white; font-weight: 700; }
+        .bug-count { cursor: pointer; transition: transform 0.3s ease; display: inline-block; }
+        .bug-count:hover { transform: scale(1.5) rotate(20deg); }
         .server-status {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.8rem;
-            color: var(--yellow);
-            background: rgba(255,215,0,0.1);
-            padding: 5px 15px;
-            border-radius: 20px;
+            display: flex; align-items: center; gap: 8px; font-family: 'Fira Code', monospace;
+            font-size: 0.8rem; color: var(--yellow); background: rgba(255,215,0,0.1);
+            padding: 5px 15px; border-radius: 20px;
         }
-
-        /* Floating Cat */
-        .pixel-cat {
-            position: absolute;
-            bottom: 0;
-            left: -50px;
-            font-size: 2rem;
-            transition: left 5s linear;
-        }
-
-        .pixel-cat.walking {
-            left: 110%;
-        }
+        
+        .pixel-cat { position: absolute; bottom: 0; left: -50px; font-size: 2rem; transition: left 5s linear; }
+        .pixel-cat.walking { left: 110%; }
     </style>
 
     <!-- ==========================================
          🚀 FLOATING UTILITIES
     ========================================== -->
-    <!-- Scroll To Top -->
-    <a href="#home" class="back-to-top" id="backToTop" title="Beam me up! 🛸">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/919528923866" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="#home" class="back-to-top" id="backToTop" title="Beam me up! 🛸"><i class="fas fa-arrow-up"></i></a>
+    <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
     <style>
         .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background: var(--gradient-1); border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; color: white;
+            text-decoration: none; font-size: 1.2rem; z-index: 999;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
             box-shadow: var(--glow-blue);
         }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-        }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-5px); }
 
         .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 2rem;
-            z-index: 999;
+            position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px;
+            background: #25d366; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; color: white;
+            text-decoration: none; font-size: 2rem; z-index: 999;
             box-shadow: 0 5px 20px rgba(37,211,102,0.4);
-            transition: all 0.3s var(--bounce);
-            animation: pulseGreen 2s infinite;
+            transition: all 0.3s var(--bounce); animation: pulseGreen 2s infinite;
         }
-
         @keyframes pulseGreen {
             0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
             70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
             100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.1) rotate(10deg);
-        }
+        .whatsapp-btn:hover { transform: scale(1.1) rotate(10deg); }
     </style>
     <!-- ==========================================
          🧠 JAVASCRIPT LOGIC
@@ -6604,7 +6324,6 @@
     </script>
 </body>
 </html>
-
 
 
 
